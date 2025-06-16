@@ -1,0 +1,315 @@
+/* Creative, professional backgrounds for partner-program.html */
+body.partner-program-bg {
+    background: linear-gradient(120deg, var(--frame-blue1, #003366) 0%, var(--frame-blue3, #00a8e8) 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle geometric SVG overlay */
+.partner-bg-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+/* Glassmorphism effect for all main sections */
+.hero, .services, .about, .features, .contact {
+    background: rgba(20, 30, 46, 0.60);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0, 86, 179, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glassmorphism for service cards */
+.service-card, .feature-card, .mission, .vision {
+    background: rgba(20, 30, 46, 0.45);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
+    border: 1px solid rgba(0, 168, 232, 0.13);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--white);
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+.service-card:hover, .feature-card:hover, .mission:hover, .vision:hover {
+    box-shadow: 0 8px 32px rgba(0, 168, 232, 0.16);
+    border: 1.5px solid var(--frame-blue3, #00a8e8);
+    background: rgba(20, 30, 46, 0.60);
+}
+
+/* Glassmorphism for Contact Form */
+.contact-form {
+    background: rgba(20, 30, 46, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 168, 232, 0.13);
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea,
+#partner-form input,
+#partner-form select,
+#partner-form textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder,
+#partner-form input::placeholder,
+#partner-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style for the select dropdown arrow */
+#contact-form select, #partner-form select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.4-5.4-13z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#contact-form select option,
+#partner-form select option {
+    background: var(--frame-blue1, #141e2e);
+    color: var(--white);
+}
+
+/* Partner form container with glassmorphism */
+.apply-section form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(20, 30, 46, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 168, 232, 0.13);
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.apply-section input,
+.apply-section textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.apply-section input::placeholder,
+.apply-section textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Glassmorphism for mission and vision cards */
+.mission, .vision {
+    background: rgba(20, 30, 46, 0.45);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
+    border: 1px solid rgba(0, 168, 232, 0.13);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--white);
+    padding: 24px 18px;
+    margin-bottom: 0;
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+.mission:hover, .vision:hover {
+    box-shadow: 0 8px 32px rgba(0, 168, 232, 0.16);
+    border: 1.5px solid var(--frame-blue3, #00a8e8);
+    background: rgba(20, 30, 46, 0.60);
+}
+
+/* Decorative floating dots */
+.partner-floating-dot {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatDot 10s ease-in-out infinite alternate;
+}
+@keyframes floatDot {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-30px) scale(1.15); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 800px) {
+    .partner-hero, .services, .about, .features, .contact {
+        border-radius: 12px;
+        margin-bottom: 18px;
+    }
+}
+
+/* Glassmorphism for Apply Now button in hero */
+.partner-hero .btn {
+    background: rgba(20, 30, 46, 0.40);
+    color: var(--white);
+    border: 1.5px solid rgba(0,168,232,0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 16px rgba(0,168,232,0.10);
+    border-radius: 32px;
+    font-weight: 600;
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s, color 0.2s;
+}
+.partner-hero .btn:hover {
+    background: rgba(0,168,232,0.18);
+    border: 2px solid var(--frame-blue3, #00a8e8);
+    box-shadow: 0 4px 32px rgba(0,168,232,0.18);
+    color: var(--white);
+}
+
+/* Global & Community Reach Section */
+.community-reach-section {
+    background: rgba(20, 30, 46, 0.60);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0, 86, 179, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+    padding: 48px 0 36px 0;
+    overflow: hidden;
+}
+
+.community-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--frame-blue3, #00a8e8);
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+}
+
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.community-stat-card {
+    background: rgba(20, 30, 46, 0.45);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
+    border: 1px solid rgba(0, 168, 232, 0.13);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--white);
+    min-width: 220px;
+    padding: 36px 28px 28px 28px;
+    text-align: center;
+    margin-bottom: 18px;
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+
+.community-stat-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 168, 232, 0.16);
+    border: 1.5px solid var(--frame-blue3, #00a8e8);
+    background: rgba(20, 30, 46, 0.60);
+}
+
+.stat-number {
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: var(--frame-blue3, #00a8e8);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 16px rgba(0,168,232,0.10);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--white);
+    opacity: 0.85;
+    letter-spacing: 0.01em;
+}
+
+/* Form Status Messages */
+.form-status {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.form-status.success {
+    background-color: rgba(40, 167, 69, 0.15);
+    border-left: 4px solid #28a745;
+    color: #d4edda;
+}
+
+.form-status.error {
+    background-color: rgba(220, 53, 69, 0.15);
+    border-left: 4px solid #dc3545;
+    color: #f8d7da;
+}
+
+/* Loading Button State */
+.btn .btn-loading {
+    display: none;
+    margin-left: 8px;
+}
+
+.btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Form Group Focus States */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--frame-blue3) !important;
+    box-shadow: 0 0 0 2px rgba(0, 168, 232, 0.2) !important;
+    outline: none;
+}
+
+/* Glassmorphism for Partner Form - Overrides */
+.apply-section #partner-form {
+    background: rgba(20, 30, 46, 0.45) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(0, 168, 232, 0.13) !important;
+    box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10) !important;
+    padding: 40px !important;
+    border-radius: 16px !important;
+}
+
+#partner-form input,
+#partner-form textarea {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--white) !important;
+}
+
+#partner-form input::placeholder,
+#partner-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+

@@ -1,0 +1,490 @@
+class QRParticles {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) return;
+
+        // Performance optimizations
+        this.lastTime = 0;
+        this.fps = 60;
+        this.fpsInterval = 1000 / this.fps;
+        this.then = performance.now();
+        
+        this.particles = [];
+        this.mouseX = 0;
+        this.mouseY = 0;
+        this.isInteracting = false;
+        this.animationId = null;
+        this.qrCodeSize = 21; // Standard QR code size (version 2)
+        this.particleSize = 8; // Smaller particles for better detail
+        this.spacing = 12; // Closer spacing for QR code
+        this.centerX = 0;
+        this.centerY = 0;
+        this.targetPositions = [];
+        this.particleCount = 0; // Will be set based on QR code
+        this.qrCodeData = this.generateQRCodePattern();
+        this.particleCount = this.qrCodeData.length;
+        
+        // Animation states
+        this.state = 'forming'; // 'forming', 'formed', 'scattering', 'scattered'
+        this.stateTime = 0;
+        this.formationProgress = 0;
+        
+        // Bind methods for better performance
+        this.animate = this.animate.bind(this);
+        this.handleMouseMove = this.handleMouseMove.bind(this);
+        this.calculateCenter = this.calculateCenter.bind(this);
+        this.generateQRCodePattern = this.generateQRCodePattern.bind(this);
+        
+        this.init();
+    }
+    
+    // Generate a simple QR code pattern (simplified for demo)
+    generateQRCodePattern() {
+        const size = this.qrCodeSize;
+        const pattern = [];
+        
+        // Add position markers (3 big squares in the corners)
+        const addPositionMarker = (x, y) => {
+            for (let dy = -2; dy <= 2; dy++) {
+                for (let dx = -2; dx <= 2; dx++) {
+                    const px = x + dx;
+                    const py = y + dy;
+                    if (px >= 0 && px < size && py >= 0 && py < size) {
+                        pattern.push({x: px, y: py, isMarker: true});
+                    }
+                }
+            }
+        };
+        
+        // Add position markers (top-left, top-right, bottom-left)
+        addPositionMarker(3, 3);
+        addPositionMarker(size - 4, 3);
+        addPositionMarker(3, size - 4);
+        
+        // Add timing patterns (dashed lines)
+        for (let i = 0; i < size; i++) {
+            if (i % 2 === 0) {
+                pattern.push({x: i, y: 6, isTiming: true});
+                pattern.push({x: 6, y: i, isTiming: true});
+            }
+        }
+        
+        // Add some data modules (simplified pattern)
+        for (let y = 0; y < size; y++) {
+            for (let x = 0; x < size; x++) {
+                // Skip position markers and timing patterns
+                const isPositionMarker = 
+                    (x <= 7 && y <= 7) || 
+                    (x >= size - 8 && y <= 7) || 
+                    (x <= 7 && y >= size - 8);
+                const isTiming = x === 6 || y === 6;
+                
+                if (!isPositionMarker && !isTiming) {
+                    // Simple pattern for demo (in a real app, this would be actual QR data)
+                    if ((x + y) % 3 === 0 || (x * y) % 5 === 0) {
+                        pattern.push({x, y, isData: true});
+                    }
+                }
+            }
+        }
+        
+        return pattern;
+    }
+
+
+    init() {
+        // Set up container
+        this.container.innerHTML = '';
+        this.container.style.position = 'absolute';
+        this.container.style.top = '0';
+        this.container.style.left = '0';
+        this.container.style.width = '100%';
+        this.container.style.height = '100%';
+        this.container.style.zIndex = '1';
+        this.container.style.overflow = 'hidden';
+
+        // Create particles in a QR code pattern
+        this.createQRParticles();
+        
+        // Set up mouse move event
+        document.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.container.addEventListener('mouseenter', () => this.isInteracting = true);
+        this.container.addEventListener('mouseleave', () => this.isInteracting = false);
+        
+        // Start animation
+        this.animate();
+        
+        // Initial position calculation
+        this.calculateCenter();
+        window.addEventListener('resize', this.calculateCenter.bind(this));
+    }
+    
+    calculateCenter() {
+        const rect = this.container.getBoundingClientRect();
+        this.centerX = rect.width / 2 - (this.qrCodeSize * this.spacing) / 2;
+        this.centerY = rect.height / 2 - (this.qrCodeSize * this.spacing) / 2;
+        
+        // Update target positions
+        this.targetPositions = [];
+        for (let y = 0; y < this.qrCodeSize; y++) {
+            for (let x = 0; x < this.qrCodeSize; x++) {
+                const index = y * this.qrCodeSize + x;
+                // Create a QR code pattern (simplified for demonstration)
+                const isActive = (x + y) % 3 === 0 || (x * y) % 5 === 0;
+                if (isActive) {
+                    this.targetPositions.push({
+                        x: this.centerX + x * this.spacing,
+                        y: this.centerY + y * this.spacing,
+                        scale: 1
+                    });
+                }
+            }
+        }
+        
+        // Add any remaining elements to the container
+        if (fragment.hasChildNodes()) {
+            this.container.appendChild(fragment);
+        }
+    }
+    
+    createParticles() {
+        const rect = this.container.getBoundingClientRect();
+        this.containerWidth = rect.width;
+        this.containerHeight = rect.height;
+        this.particles = []; // Reset particles array
+        
+        // Generate a simple QR code pattern (for demonstration)
+        const qrSize = 21; // Standard QR code size (version 1)
+        const moduleSize = Math.min(8, Math.floor(Math.min(this.containerWidth, this.containerHeight) * 0.8 / qrSize));
+        
+        // Calculate starting position to center the QR code
+        const startX = (this.containerWidth - (qrSize * moduleSize)) / 2;
+        const startY = (this.containerHeight - (qrSize * moduleSize)) / 2;
+        
+        // Helper function to create position markers
+        const createPositionMarker = (x, y) => {
+            const size = 7; // 7x7 modules for position markers
+            for (let dy = 0; dy < size; dy++) {
+                for (let dx = 0; dx < size; dx++) {
+                    // Only create particles for the border and inner square
+                    if (dx === 0 || dx === size - 1 || dy === 0 || dy === size - 1 || 
+                        (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4)) {
+                        this.createParticle(
+                            startX + (x + dx) * moduleSize, 
+                            startY + (y + dy) * moduleSize,
+                            'marker'
+                        );
+                    }
+                }
+            }
+        };
+        
+        // Create timing patterns (the alternating dots and dashes)
+        const createTimingPatterns = () => {
+            const start = 8;
+            for (let i = 0; i < qrSize - 14; i++) {
+                // Horizontal timing pattern
+                if (i % 2 === 0) {
+                    this.createParticle(
+                        startX + (start + i) * moduleSize,
+                        startY + 6 * moduleSize,
+                        'timing'
+                    );
+                }
+                // Vertical timing pattern
+                if (i % 2 === 0) {
+                    this.createParticle(
+                        startX + 6 * moduleSize,
+                        startY + (start + i) * moduleSize,
+                        'timing'
+                    );
+                }
+            }
+        };
+        
+        // Create position markers in three corners
+        createPositionMarker(0, 0);
+        createPositionMarker(qrSize - 7, 0);
+        createPositionMarker(0, qrSize - 7);
+        
+        // Create timing patterns
+        createTimingPatterns();
+        
+        // Create data modules (simplified pattern)
+        for (let y = 0; y < qrSize; y++) {
+            for (let x = 0; x < qrSize; x++) {
+                // Skip position markers and timing patterns
+                if (!this.isInPositionMarker(x, y, qrSize) && !this.isInTimingPattern(x, y, qrSize)) {
+                    // Create a pattern that looks like a QR code
+                    if ((x + y) % 3 === 0 || (x * y) % 5 === 0) {
+                        this.createParticle(
+                            startX + x * moduleSize,
+                            startY + y * moduleSize,
+                            'data'
+                        );
+                    }
+                }
+            }
+        }
+        
+        // Shuffle particles for better visual effect
+        this.particles = this.particles.sort(() => Math.random() - 0.5);
+    }
+    
+    createParticle(x, y, type) {
+        const particle = document.createElement('div');
+        particle.className = `qr-particle qr-${type}`;
+        
+        // Random starting position (off-screen or scattered)
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * Math.min(this.containerWidth, this.containerHeight) * 0.4;
+        const startX = this.containerWidth / 2 + Math.cos(angle) * distance;
+        const startY = this.containerHeight / 2 + Math.sin(angle) * distance;
+        
+        // Apply initial position
+        particle.style.left = `${startX}px`;
+        particle.style.top = `${startY}px`;
+        
+        this.container.appendChild(particle);
+        
+        this.particles.push({
+            element: particle,
+            x: startX,
+            y: startY,
+            vx: 0,
+            vy: 0,
+            homeX: x,
+            homeY: y,
+            scale: 0.5,
+            opacity: 0,
+            delay: Math.random() * 0.8, // Stagger the animation
+            size: this.particleSize,
+            type: type
+        });
+    }
+    
+    isInPositionMarker(x, y, qrSize) {
+        // Check if (x,y) is inside any of the three position markers
+        const inTopLeft = x < 8 && y < 8;
+        const inTopRight = x > qrSize - 8 && y < 8;
+        const inBottomLeft = x < 8 && y > qrSize - 8;
+        return inTopLeft || inTopRight || inBottomLeft;
+    }
+    
+    isInTimingPattern(x, y, qrSize) {
+        // Check if (x,y) is part of the timing patterns
+        return (x === 6 && y >= 8 && y < qrSize - 8) || // Vertical timing
+               (y === 6 && x >= 8 && x < qrSize - 8);   // Horizontal timing
+    }
+    
+    handleMouseMove(e) {
+        const rect = this.container.getBoundingClientRect();
+        this.mouseX = e.clientX - rect.left;
+        this.mouseY = e.clientY - rect.top;
+    }
+    
+    updateParticles(now) {
+        if (!this.particles || this.particles.length === 0) return;
+        
+        const rect = this.container.getBoundingClientRect();
+        const particlesLength = this.particles.length;
+        
+        // Update state timing (16ms is roughly 60fps)
+        this.stateTime += 16;
+        
+        // State machine for different particle behaviors
+        switch (this.state) {
+            case 'forming':
+                // Transition to formed after animation completes
+                if (this.stateTime > 2000) { // 2 seconds to form
+                    this.state = 'formed';
+                    this.stateTime = 0;
+                }
+                break;
+                
+            case 'formed':
+                // Stay in this state until interaction
+                break;
+                
+            case 'scattering':
+                // Transition to scattered after animation completes
+                if (this.stateTime > 1000) { // 1 second to scatter
+                    this.state = 'scattered';
+                    this.stateTime = 0;
+                }
+                break;
+                
+            case 'scattered':
+                // Return to forming when mouse leaves
+                if (!this.isInteracting) {
+                    this.state = 'forming';
+                    this.stateTime = 0;
+                }
+                break;
+        }
+        
+        // Update particles
+        for (let i = 0; i < this.particles.length; i++) {
+            const p = this.particles[i];
+            
+            // Scattered state - move to random positions
+            if (this.state === 'scattered') {
+                const targetX = p.x;
+                const targetY = p.y;
+                const targetScale = 1;
+                const targetOpacity = 0.8;
+                
+                // Add some movement when scattered
+                targetX += Math.sin(now * 0.001 + i) * 2;
+                targetY += Math.cos(now * 0.001 + i * 0.7) * 2;
+            } else {
+                // Forming or formed - move to QR code positions
+                const progress = this.state === 'forming' ? 
+                    Math.min(1, (this.stateTime - p.delay) * 2) : 1;
+                    
+                const targetX = p.homeX;
+                const targetY = p.homeY;
+                const targetScale = 1;
+                const targetOpacity = 0.9;
+                targetY = p.homeY;
+                targetScale = 1;
+                targetOpacity = 0.9;
+                
+                // Ease out when forming
+                if (this.state === 'forming') {
+                    const dx = p.homeX - p.x;
+                    const dy = p.homeY - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist > 5) {
+                        const ease = 0.1 * progress;
+                        p.vx += (dx - p.vx) * ease;
+                        p.vy += (dy - p.vy) * ease;
+                    } else {
+                        p.vx = 0;
+                        p.vy = 0;
+                    }
+                    
+                    targetX = p.x + p.vx;
+                    targetY = p.y + p.vy;
+                    targetScale = 0.7 + 0.3 * progress;
+                    targetOpacity = 0.3 + 0.7 * progress;
+                }
+            }
+            
+            // Mouse interaction - repel particles
+            if (this.isInteracting) {
+                const dx = this.mouseX - targetX;
+                const dy = this.mouseY - targetY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const minDistance = 120;
+                
+                if (distance < minDistance) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (1 - distance / minDistance) * 5;
+                    
+                    targetX -= Math.cos(angle) * force * 15;
+                    targetY -= Math.sin(angle) * force * 15;
+                    targetScale += force * 0.3;
+                    
+                    // Add highlight effect
+                    if (distance < 60) {
+                        p.element.classList.add('highlight');
+                    } else {
+                        p.element.classList.remove('highlight');
+                    }
+                }
+            } else {
+                p.element.classList.remove('highlight');
+            }
+            
+            // Smooth movement
+            p.x += (targetX - p.x) * 0.1;
+            p.y += (targetY - p.y) * 0.1;
+            p.scale += (targetScale - p.scale) * 0.1;
+            p.opacity += (targetOpacity - p.opacity) * 0.1;
+            
+            // Apply boundaries
+            const rect = this.container.getBoundingClientRect();
+            p.x = Math.max(10, Math.min(rect.width - 10, p.x));
+            p.y = Math.max(10, Math.min(rect.height - 10, p.y));
+            
+            }
+        }
+    }
+    
+    animate(currentTime) {
+        // Throttle the frame rate
+        const delta = currentTime - this.then;
+        
+        if (delta > this.fpsInterval) {
+            this.then = currentTime - (delta % this.fpsInterval);
+            
+            // Update particles only if the tab is visible
+            if (!document.hidden) {
+                this.updateParticles(currentTime);
+            }
+        }
+        
+        this.animationId = requestAnimationFrame((ts) => this.animate(ts));
+    }
+    
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+        // Clean up event listeners
+        document.removeEventListener('mousemove', this.handleMouseMove);
+        // Remove all particles
+        this.container.innerHTML = '';
+    }
+}
+
+// Initialize when DOM is loaded
+let qrParticles;
+let isInitialized = false;
+
+function initParticles() {
+    if (isInitialized) return;
+    
+    // Only initialize if the user is not on a mobile device
+    if (window.innerWidth > 768) { // Only for desktop
+        qrParticles = new QRParticles('qrParticles');
+        isInitialized = true;
+        
+        // Handle window resize with debounce
+        let resizeTimer;
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (qrParticles) {
+                    qrParticles.calculateCenter();
+                }
+            }, 200);
+        };
+        
+        window.addEventListener('resize', handleResize, { passive: true });
+        
+        // Clean up on tab visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                // Pause animation when tab is not visible
+                if (qrParticles && qrParticles.animationId) {
+                    cancelAnimationFrame(qrParticles.animationId);
+                    qrParticles.animationId = null;
+                }
+            } else if (qrParticles && !qrParticles.animationId) {
+                // Resume animation when tab becomes visible
+                qrParticles.then = performance.now();
+                qrParticles.animate(performance.now());
+            }
+        });
+    }
+}
+
+// Initialize when DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initParticles);
+} else {
+    initParticles();
+}

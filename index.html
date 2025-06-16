@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAME - Virtual Fiscalisation Solutions</title>
+    <meta name="description" content="FRAME provides comprehensive virtual fiscalisation and Fiscal Data Management (FDM) compliance solutions in Zimbabwe. 100% compliant with ZIMRA regulations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/page-transition.css">
+    <link rel="stylesheet" href="css/partner-program.css">
+</head>
+<body class="partner-program-bg">
+    <!-- SVG geometric overlay -->
+    <svg class="partner-bg-svg" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg-grad1" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#003366"/>
+          <stop offset="1" stop-color="#00a8e8"/>
+        </linearGradient>
+      </defs>
+      <g opacity="0.2">
+        <polygon points="200,100 400,80 350,250 150,230" fill="url(#bg-grad1)"/>
+        <polygon points="1200,200 1400,180 1350,350 1150,330" fill="url(#bg-grad1)"/>
+        <polygon points="800,700 1100,650 1050,850 750,800" fill="url(#bg-grad1)"/>
+        <circle cx="1600" cy="900" r="120" fill="url(#bg-grad1)"/>
+      </g>
+    </svg>
+    <!-- Decorative floating dots -->
+    <div class="partner-floating-dot" style="top:12%;left:8%;width:36px;height:36px;background:var(--frame-blue3);"></div>
+    <div class="partner-floating-dot" style="top:70%;left:90%;width:22px;height:22px;background:var(--frame-blue2);"></div>
+    <div class="partner-floating-dot" style="top:60%;left:18%;width:28px;height:28px;background:var(--frame-blue1);"></div>
+    <div class="partner-floating-dot" style="top:30%;left:70%;width:18px;height:18px;background:var(--frame-blue3);"></div>
+    <!-- Page Transition -->
+    <div class="page-transition-overlay">
+        <div class="transition-panel transition-panel-1"></div>
+        <div class="transition-panel transition-panel-2"></div>
+        <img src="images/frame-logo-full-clear.png" alt="FRAME Logo" class="page-transition-logo">
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">
+    <img src="images/frame-logo-full-clear.png" alt="FRAME Virtual Fiscalisation Logo" class="frame-logo-img" style="height: 60px; width: auto; display: block;">
+</a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="partner-program.html" class="partner-program-btn">Partner Program</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero reveal">
+        <canvas id="qr-canvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Zimbabwe's Leading Virtual Fiscalisation Solution</h1>
+                <p>Streamline your business operations with our 100% virtual fiscalisation platform. Fully compliant with ZIMRA regulations and designed for businesses of all sizes.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-illustration.svg" alt="Virtual Fiscalisation">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>About FRAME</h2>
+                <p>Leading the digital transformation of fiscal compliance in Zimbabwe</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>FRAME is a leading provider of comprehensive fiscalisation and Fiscal Data Management (FDM) compliance solutions in Zimbabwe. The company specializes in virtual fiscalisation, helping businesses streamline financial processes, reduce operational costs, and enhance efficiency while ensuring full compliance with local tax regulations.</p>
+                    <p>In 2015, Scentpro Tech signed up as Regional Implementation and Support Partner for Fiscal Revenue Solutions (FRS). FRAME was developed 6 years later in response to ZIMRA requirements. Our technical team has extensive experience in fiscal device installations, support, maintenance, and compliance.</p>
+                </div>
+                
+                <div class="mission-vision">
+                    <div class="mission">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To empower businesses in Zimbabwe through innovative and affordable virtual fiscal solutions that ensure seamless compliance with ZIMRA regulations.</p>
+                    </div>
+                    
+                    <div class="vision">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To become Zimbabwe's leading provider of digital fiscal compliance solutions, driving a future where businesses thrive through simple, smart, and fully virtual technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive fiscalisation solutions for your business</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Seamless Integration</h3>
+                    <p>Tailored for seamless integration with existing business systems such as POS or ERP platforms.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>ZIMRA Compliance</h3>
+                    <p>Direct integration with the Zimbabwe Revenue Authority (ZIMRA) for regulatory compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Remote Management</h3>
+                    <p>Customizable dashboards for remote access and device management.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Custom Development</h3>
+                    <p>Customized & localized development solutions for industry-specific requirements.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Ongoing Support</h3>
+                    <p>Continuous monitoring and local support to ensure smooth operations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Referral Program</h3>
+                    <p>Join our network of independent resellers and earn commission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features reveal staggered-parent">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Makes Us Different</h2>
+                <p>Innovative solutions designed for your business needs</p>
+            </div>
+            
+            <div class="features-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Virtual – No hardware costs or maintenance</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>In-House Development Team – Fast, responsive and localized updates</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Real-Time Monitoring & Reports – Track performance instantly</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Offline Capability – Continue operations during outages</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Multi-Level Integration – Device, server, and API flexibility</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Corporate Free Trial – Test FRAME for 30 days risk-free</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Affordable Pricing – $150 install + $120/year, no surprises</span>
+                    </div>
+                </div>
+                
+                <div class="features-image">
+                    <img src="images/features-illustration.svg" alt="FRAME Features">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="key-features reveal staggered-parent">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Key Features</h2>
+                <p>Powerful tools for your business success</p>
+            </div>
+            
+            <div class="key-features-grid">
+                <div class="key-feature">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Customizable Dashboards</h4>
+                    <p>Customizable Multi-Branch Dashboards for better management.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-file-invoice"></i>
+                    <h4>Daily Summaries</h4>
+                    <p>Daily Invoicing Summaries & Alerts for better tracking.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-bell"></i>
+                    <h4>Real-Time Notifications</h4>
+                    <p>Pop-Up Error Notifications in Real-Time for immediate action.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-wifi"></i>
+                    <h4>Offline Support</h4>
+                    <p>Error-Mode Signing & Local Storage with Offline Signing and Auto-Sync.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Flexible Integration</h4>
+                    <p>Device, API, and Server-Level Fiscalisation options.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Custom Invoicing</h4>
+                    <p>Custom Invoicing Formats & Multi-Currency Support (on request).</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-file-export"></i>
+                    <h4>ZIMRA Ready</h4>
+                    <p>ZIMRA-Ready Templates & Auto Audit Logs for compliance.</p>
+                </div>
+                
+                <div class="key-feature">
+                    <i class="fas fa-lock"></i>
+                    <h4>Secure Access</h4>
+                    <p>Fully Encrypted & Role-Based Access Control for security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global & Community Reach -->
+    <section class="community-reach-section glassmorphism">
+      <div class="container">
+        <h2 class="community-title">Global & Community Reach</h2>
+        <div class="community-stats">
+          <div class="community-stat-card">
+            <div class="stat-number" id="transactions-today">0</div>
+            <div class="stat-label">Transactions Today</div>
+          </div>
+          <div class="community-stat-card">
+            <div class="stat-number" id="currencies-count">180+</div>
+            <div class="stat-label">Currencies</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team today</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+2638677186045">+263 86 7718 6045</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/263774756647">+263 774 756 647</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:sales@frame.co.zw">sales@frame.co.zw</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Website</h4>
+                            <p><a href="https://www.frame.co.zw" target="_blank">www.frame.co.zw</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>1 Napier Ave. Hillside, Bulawayo<br>Napier Office Park, Unit 4</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <div id="form-status" class="form-status" style="display: none;"></div>
+                    <form id="contact-form" method="POST">
+
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Support">Support</option>
+                                <option value="Partnership">Partnership</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <div class="hexagon"></div>
+                            <div class="hexagon"></div>
+                            <div class="hexagon"></div>
+                        </div>
+                        <div class="logo-text">
+                            <h1>FRAME</h1>
+                            <p>VIRTUAL FISCALISATION</p>
+                        </div>
+                    </a>
+                    <p>Empowering businesses in Zimbabwe with innovative virtual fiscalisation solutions that ensure compliance and drive growth.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Virtual Fiscalisation</a></li>
+                        <li><a href="#">POS Integration</a></li>
+                        <li><a href="#">Compliance Solutions</a></li>
+                        <li><a href="#">Custom Development</a></li>
+                        <li><a href="#">Support & Maintenance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> FRAME. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> in Zimbabwe</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/qr-animation.js"></script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/form-handler.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
