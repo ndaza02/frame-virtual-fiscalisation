@@ -1,3 +1,4 @@
+// Use the root node-fetch module
 const fetch = require('node-fetch');
 
 // Helper function to handle CORS

@@ -4,12 +4,13 @@
   "description": "A modern, responsive website for FRAME, a leading provider of virtual fiscalisation solutions in Zimbabwe.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:functions": "cd netlify/functions && npm install"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-fetch": "^2.7.0"
-  }
+  "license": "ISC"
 }
