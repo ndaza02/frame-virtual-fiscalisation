@@ -39,7 +39,7 @@ async function handleFormSubmit(e) {
     
     try {
         // Submit to n8n webhook
-        const response = await fetch('YOUR_N8N_WEBHOOK_URL/frame-form', {
+        const response = await fetch('https://framewebsitesubmissions.app.n8n.cloud/webhook/frame-form', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
