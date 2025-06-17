@@ -38,11 +38,13 @@ async function handleFormSubmit(e) {
     formObject.formType = form.id === 'contact-form' ? 'Contact' : 'Partner Application';
     
     try {
-        // Submit to Netlify function
-        const response = await fetch('/.netlify/functions/submit-to-clickup', {
+        // Submit to n8n webhook
+        const response = await fetch('YOUR_N8N_WEBHOOK_URL/frame-form', {
             method: 'POST',
-            headers: {
+            headers: { 
                 'Content-Type': 'application/json',
+                // Uncomment and update if using Basic Auth:
+                // 'Authorization': 'Basic ' + btoa('username:password')
             },
             body: JSON.stringify(formObject),
         });
