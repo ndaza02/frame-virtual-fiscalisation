@@ -196,12 +196,16 @@ body.partner-program-bg {
 }
 
 .community-title {
-    text-align: center;
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--frame-blue3, #00a8e8);
-    margin-bottom: 32px;
     letter-spacing: 0.03em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 32px 0;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .community-stats {

@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const transitionOverlay = document.querySelector('.page-transition-overlay');
     const links = document.querySelectorAll('a');
 
-    // On page load, ensure the overlay is hidden
+    // On initial page load, show the overlay, then hide it with animation
     if (transitionOverlay) {
-        transitionOverlay.classList.remove('active');
+        transitionOverlay.classList.add('active');
+        setTimeout(() => {
+            transitionOverlay.classList.remove('active');
+        }, 1050); // Match this to your transition duration
     }
 
     links.forEach(link => {
