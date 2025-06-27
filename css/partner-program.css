@@ -1,6 +1,6 @@
 /* Creative, professional backgrounds for partner-program.html */
 body.partner-program-bg {
-    background: linear-gradient(120deg, var(--frame-blue1, #003366) 0%, var(--frame-blue3, #00a8e8) 100%);
+    background: #f8f9fa;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -18,20 +18,46 @@ body.partner-program-bg {
     z-index: 0;
 }
 
-/* Glassmorphism effect for all main sections */
-.hero, .services, .about, .features, .contact {
-    background: rgba(20, 30, 46, 0.60);
-    border-radius: 24px;
-    box-shadow: 0 8px 40px rgba(0, 86, 179, 0.14);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+/* Main sections with white background */
+.hero, .about, .features, .contact {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 32px;
     position: relative;
     z-index: 1;
+    padding: 40px;
 }
 
-/* Glassmorphism for service cards */
-.service-card, .feature-card, .mission, .vision {
+/* Services section */
+.services {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+}
+
+/* Service cards - match key feature cards */
+.service-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    color: var(--frame-navy);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Keep glass effect for other elements */
+.feature-card, .mission, .vision {
     background: rgba(20, 30, 46, 0.45);
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0, 86, 179, 0.10);
@@ -41,7 +67,8 @@ body.partner-program-bg {
     color: var(--white);
     transition: box-shadow 0.2s, border 0.2s, background 0.2s;
 }
-.service-card:hover, .feature-card:hover, .mission:hover, .vision:hover {
+
+.feature-card:hover, .mission:hover, .vision:hover {
     box-shadow: 0 8px 32px rgba(0, 168, 232, 0.16);
     border: 1.5px solid var(--frame-blue3, #00a8e8);
     background: rgba(20, 30, 46, 0.60);
@@ -156,9 +183,14 @@ body.partner-program-bg {
 
 /* Responsive tweaks */
 @media (max-width: 800px) {
-    .partner-hero, .services, .about, .features, .contact {
+    .partner-hero, .about, .features, .contact {
         border-radius: 12px;
         margin-bottom: 18px;
+    }
+    .services {
+        border-radius: 12px;
+        margin-bottom: 18px;
+        background: #f8f9fa;
     }
 }
 

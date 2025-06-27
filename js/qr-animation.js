@@ -138,14 +138,71 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     }
 
+    // Handle mouse movement
     window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
     });
 
-    window.addEventListener('resize', () => {
+    // Handle touch movement - simplified for natural scrolling
+    let lastTouchTime = 0;
+    let lastTouchY = 0;
+    let isScrolling = false;
+    const scrollThreshold = 10; // pixels to move before considering it a scroll
+
+    window.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        lastTouchY = touch.clientY;
+        isScrolling = false;
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            const touchY = touch.clientY;
+            
+            // Check if this is a scroll gesture (vertical movement)
+            if (Math.abs(touchY - lastTouchY) > scrollThreshold) {
+                isScrolling = true;
+            }
+            
+            // Only update animation if not scrolling
+            if (!isScrolling) {
+                mouse.x = touch.clientX;
+                mouse.y = touch.clientY;
+            }
+            
+            lastTouchY = touchY;
+        }
+    }, { passive: true });
+
+    // Handle touch end
+    window.addEventListener('touchend', () => {
+        // Smoothly reset mouse position off-screen when touch ends
+        if (!isScrolling) {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        }
+        isScrolling = false;
+    }, { passive: true });
+
+    // Handle window resize
+    const handleResize = () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         createTiledParticles();
+    };
+    
+    // Debounce resize for better performance
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 100);
     });
+    
+    // Initial setup for touch devices
+    if ('ontouchstart' in window) {
+        mouse.radius = 200; // Slightly larger radius for touch devices
+        document.body.classList.add('touch-device');
+    }
 });

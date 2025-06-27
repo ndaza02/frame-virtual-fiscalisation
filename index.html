@@ -108,6 +108,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="partner-program.html" class="partner-program-btn">Partner Program</a></li>
                 </ul>
@@ -120,21 +121,168 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero reveal">
-        <canvas id="qr-canvas"></canvas>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Zimbabwe's Leading Virtual Fiscalisation Solution</h1>
-                <p>Streamline your business operations with our 100% virtual fiscalisation platform. Fully compliant with ZIMRA regulations and designed for businesses of all sizes.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-feature-card">
-                        <h2 id="typing-feature" class="typing-text"></h2>
+    <section id="home" class="hero reveal" style="min-height: 600px; display: flex; align-items: center; padding: 80px 0; background: linear-gradient(135deg, #1a2a3a 0%, #2c5b8a 100%); color: #fff; position: relative; overflow: hidden;">
+        <!-- Animated Background Elements -->
+        <div class="hero-bg-elements">
+            <div class="bg-circle" style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 70%); top: -100px; right: -100px; border-radius: 50%;"></div>
+            <div class="bg-circle" style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(41, 128, 185, 0.1) 0%, rgba(41, 128, 185, 0) 70%); bottom: -200px; left: -200px; border-radius: 50%;"></div>
+        </div>
+        
+        <!-- QR Code Canvas -->
+        <canvas id="qr-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.08;"></canvas>
+        
+        <!-- Main Content -->
+        <div class="container" style="position: relative; z-index: 2; height: 100%;">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 40px 0;">
+                <!-- Hero Card -->
+                <div class="hero-card" style="
+                    max-width: 900px;
+                    margin: 0 auto;
+                    background: rgba(255, 255, 255, 0.03);
+                    backdrop-filter: blur(10px);
+                    border-radius: 20px;
+                    padding: 50px 40px;
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                    overflow: hidden;
+                ">
+                    <!-- Decorative Elements -->
+                    <div style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, var(--frame-blue3), #4fc3f7, var(--frame-blue3));
+                    "></div>
+                    
+                    <!-- Content -->
+                    <div class="hero-content" style="position: relative; z-index: 2;">
+                        <!-- Badge -->
+                        <div style="
+                            background: rgba(255, 255, 255, 0.1);
+                            color: #fff;
+                            display: inline-block;
+                            padding: 6px 16px;
+                            border-radius: 50px;
+                            font-size: 0.85rem;
+                            font-weight: 500;
+                            margin-bottom: 20px;
+                            letter-spacing: 0.5px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                        ">
+                            Trusted by 100+ Businesses
+                        </div>
+                        
+                        <!-- Main Heading -->
+                        <h1 style="
+                            font-size: 2.8rem;
+                            margin: 0 0 20px 0;
+                            color: #fff;
+                            line-height: 1.3;
+                            font-weight: 700;
+                            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                        ">
+                            Zimbabwe's Leading <span style="color: #4fc3f7;">Virtual Fiscalisation</span> Solution
+                        </h1>
+                        
+                        <!-- Description -->
+                        <p style="
+                            font-size: 1.25rem;
+                            margin: 0 auto 35px auto;
+                            color: rgba(255, 255, 255, 0.9);
+                            line-height: 1.7;
+                            max-width: 700px;
+                            font-weight: 300;
+                        ">
+                            Streamline your business operations with our 100% virtual fiscalisation platform. 
+                            <span style="display: block; margin-top: 10px; font-weight: 400; color: #fff;">
+                                Fully compliant with ZIMRA regulations and designed for businesses of all sizes.
+                            </span>
+                        </p>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="hero-buttons" style="
+                            display: flex;
+                            gap: 15px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            margin-top: 40px;
+                        ">
+                            <a href="#contact" class="btn btn-primary" style="
+                                padding: 14px 36px;
+                                font-size: 1.1rem;
+                                background: var(--frame-blue3);
+                                border: none;
+                                border-radius: 50px;
+                                color: #fff;
+                                font-weight: 500;
+                                text-decoration: none;
+                                transition: all 0.3s ease;
+                                box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+                            ">
+                                Get Started
+                            </a>
+                            <a href="#features" class="btn btn-secondary" style="
+                                padding: 14px 36px;
+                                font-size: 1.1rem;
+                                background: rgba(255, 255, 255, 0.2);
+                                border: 1px solid rgba(255, 255, 255, 0.3);
+                                border-radius: 50px;
+                                color: #ffffff !important;
+                                font-weight: 500;
+                                text-decoration: none;
+                                transition: all 0.3s ease;
+                                backdrop-filter: blur(5px);
+                                text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                            ">
+                                <span style="color: #ffffff !important; display: inline-block; pointer-events: none;">Learn More</span>
+                            </a>
+                            <style>
+                                .hero .btn-secondary,
+                                .hero .btn-secondary span,
+                                .hero .btn-secondary * {
+                                    color: #ffffff !important;
+                                    fill: #ffffff !important;
+                                }
+                            </style>
+                        </div>
+                        
+                        <!-- Trust Badges -->
+                        <div class="trust-badges" style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            margin-top: 40px;
+                            flex-wrap: wrap;
+                        ">
+                            <div style="
+                                display: flex;
+                                align-items: center;
+                                background: rgba(255, 255, 255, 0.05);
+                                padding: 8px 16px;
+                                border-radius: 50px;
+                                border: 1px solid rgba(255, 255, 255, 0.05);
+                            ">
+                                <i class="fas fa-check-circle" style="color: #4fc3f7; margin-right: 8px;"></i>
+                                <span style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">100% ZIMRA Compliant</span>
+                            </div>
+                            <div style="
+                                display: flex;
+                                align-items: center;
+                                background: rgba(255, 255, 255, 0.05);
+                                padding: 8px 16px;
+                                border-radius: 50px;
+                                border: 1px solid rgba(255, 255, 255, 0.05);
+                            ">
+                                <i class="fas fa-shield-alt" style="color: #4fc3f7; margin-right: 8px;"></i>
+                                <span style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">Secure & Reliable</span>
+                            </div>
+                        </div>
                     </div>
-                
+                </div>
             </div>
         </div>
     </section>
@@ -231,7 +379,7 @@
                 <div class="service-card">
                     <i class="fas fa-cogs"></i>
                     <h3>Custom Development</h3>
-                    <p>Customized & localized development solutions for industry-specific requirements.</p>
+                    <p>Built in-house, FRAME  is fully customizable to match your business processes, system integrations, and industry needs.</p>
                 </div>
                 
                 <div class="service-card">
@@ -261,31 +409,41 @@
                 <div class="features-list">
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>100% Virtual – No hardware costs or maintenance</span>
+                        <span>ZIMRA-Compliant Virtual Fiscalisation – Stay tax compliant with a solution that meets all Zimbabwe Revenue Authority requirements</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>In-House Development Team – Fast, responsive and localized updates</span>
+                        <span>Cloud-Based & Hardware-Free – No physical devices needed, making setup fast and cost-effective
+                        </span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Real-Time Monitoring & Reports – Track performance instantly</span>
+                        <span>Customizable In-House Software – We built FRAME ourselves, so we can adapt it to your POS, ERP, or accounting system
+                        </span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Offline Capability – Continue operations during outages</span>
+                        <span> Real-Time Fiscal Reporting – Instantly monitor your transactions and performance from anywhere</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Multi-Level Integration – Device, server, and API flexibility</span>
+                        <span>Offline Functionality – Keep operating and reporting during internet or power outages</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Corporate Free Trial – Test FRAME for 30 days risk-free</span>
+                        <span>30-Day Free Trial – Try FRAME risk-free and see how it fits your business</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Affordable Pricing – $150 install + $120/year, no surprises</span>
+                        <span>Affordable Pricing – One-time $150 installation + $120/year. No hidden fees.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Multi-Branch & Multi-Level Integration – Scales with your business across locations and platforms</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Data Security & Local Support – Built with enterprise-grade security and responsive local support</span>
                     </div>
                 </div>
                 
@@ -457,6 +615,116 @@
         </div>
     </section>
 
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog reveal" style="padding: 100px 0; background-color: #f9fbfd;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <span class="section-tag" style="display: inline-block; background: rgba(41, 128, 185, 0.1); color: var(--frame-blue3); padding: 6px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.5px;">LATEST INSIGHTS</span>
+                <h2 style="font-size: 2.5rem; margin: 0 0 15px 0; color: #2c3e50; line-height: 1.3;">Our Latest Articles</h2>
+                <p style="font-size: 1.1rem; color: #6c757d; max-width: 700px; margin: 0 auto;">Stay updated with the latest news, tips, and insights about fiscalisation and business compliance in Zimbabwe.</p>
+            </div>
+
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 50px;">
+                <!-- Blog Post 1 -->
+                <a href="blog-posts/zimra-compliance.html" class="blog-card-link" style="text-decoration: none; display: block;">
+                    <article class="blog-card" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div class="blog-image" style="height: 220px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="ZIMRA Compliance" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <div class="blog-content" style="padding: 25px;">
+                            <div class="blog-meta" style="display: flex; align-items: center; margin-bottom: 15px; font-size: 0.85rem; color: #6c757d;">
+                                <span style="display: flex; align-items: center; margin-right: 15px;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px; color: var(--frame-blue3);"></i> June 20, 2025
+                                </span>
+                                <span style="display: flex; align-items: center;">
+                                    <i class="far fa-folder" style="margin-right: 5px; color: var(--frame-blue3);"></i> Compliance
+                                </span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin: 0 0 15px 0; line-height: 1.4; color: #2c3e50;">
+                                Understanding ZIMRA's Latest Fiscalisation Requirements
+                            </h3>
+                            <p style="color: #6c757d; margin-bottom: 20px; line-height: 1.6;">Stay ahead of the curve with our comprehensive guide to the latest ZIMRA fiscalisation requirements and how they impact your business.</p>
+                            <div class="read-more" style="display: inline-flex; align-items: center; color: var(--frame-blue3); font-weight: 500; text-decoration: none; transition: all 0.3s ease;">
+                                Read More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="blog-posts/digital-transformation.html" class="blog-card-link" style="text-decoration: none; display: block;">
+                    <article class="blog-card" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div class="blog-image" style="height: 220px; overflow: hidden;">
+                            <img src="images/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlOV9waG90b19vZl9ibGFja19wZW9wbGVfd29ya2luZ19taW5pbWFsX2NsZWFuX2NvbV9lZDdjYzQ5Yy0xZjMwLTRhMzctOWRhNC1mNjliNWNhNWNhOWJfMS5qcGc.jpg" alt="Digital Transformation" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <div class="blog-content" style="padding: 25px;">
+                            <div class="blog-meta" style="display: flex; align-items: center; margin-bottom: 15px; font-size: 0.85rem; color: #6c757d;">
+                                <span style="display: flex; align-items: center; margin-right: 15px;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px; color: var(--frame-blue3);"></i> June 10, 2025
+                                </span>
+                                <span style="display: flex; align-items: center;">
+                                    <i class="far fa-folder" style="margin-right: 5px; color: var(--frame-blue3);"></i> Technology
+                                </span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin: 0 0 15px 0; line-height: 1.4; color: #2c3e50;">
+                                The Future of Virtual Fiscalisation in Zimbabwe
+                            </h3>
+                            <p style="color: #6c757d; margin-bottom: 20px; line-height: 1.6;">Explore how virtual fiscalisation is transforming business operations and what it means for the future of commerce in Zimbabwe.</p>
+                            <div class="read-more" style="display: inline-flex; align-items: center; color: var(--frame-blue3); font-weight: 500; text-decoration: none; transition: all 0.3s ease;">
+                                Read More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 3 -->
+                <a href="blog-posts/tax-compliance-tips.html" class="blog-card-link" style="text-decoration: none; display: block;">
+                    <article class="blog-card" style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%;">
+                        <div class="blog-image" style="height: 220px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1554224155-3a58922a22c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Growth" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <div class="blog-content" style="padding: 25px;">
+                            <div class="blog-meta" style="display: flex; align-items: center; margin-bottom: 15px; font-size: 0.85rem; color: #6c757d;">
+                                <span style="display: flex; align-items: center; margin-right: 15px;">
+                                    <i class="far fa-calendar-alt" style="margin-right: 5px; color: var(--frame-blue3);"></i> May 28, 2025
+                                </span>
+                                <span style="display: flex; align-items: center;">
+                                    <i class="far fa-folder" style="margin-right: 5px; color: var(--frame-blue3);"></i> Business Tips
+                                </span>
+                            </div>
+                            <h3 style="font-size: 1.4rem; margin: 0 0 15px 0; line-height: 1.4; color: #2c3e50;">
+                                5 Ways Virtual Fiscalisation Can Grow Your Business
+                            </h3>
+                            <p style="color: #6c757d; margin-bottom: 20px; line-height: 1.6;">Discover how implementing virtual fiscalisation can lead to improved efficiency, better compliance, and business growth.</p>
+                            <div class="read-more" style="display: inline-flex; align-items: center; color: var(--frame-blue3); font-weight: 500; text-decoration: none; transition: all 0.3s ease;">
+                                Read More <i class="fas fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+            <div class="blog-cta" style="text-align: center; margin-top: 60px;">
+                <a href="blog.html" class="btn btn-primary" style="
+                    padding: 14px 36px;
+                    font-size: 1.1rem;
+                    background: var(--frame-blue3);
+                    border: none;
+                    border-radius: 50px;
+                    color: #fff;
+                    font-weight: 500;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+                    display: inline-block;
+                ">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -507,11 +775,73 @@
                 <div class="footer-newsletter">
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter for the latest updates and news.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    <form id="newsletter-form-footer" class="newsletter-form">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <button type="submit">
+                            <span class="btn-text"><i class="fas fa-paper-plane"></i></span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
                     </form>
+                    <div id="newsletter-status" style="margin-top: 10px; display: none; padding: 8px; border-radius: 4px; font-size: 0.9rem;"></div>
                 </div>
+                <script>
+                // Handle footer newsletter form submission
+                document.getElementById('newsletter-form-footer').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const form = e.target;
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const btnText = submitBtn.querySelector('.btn-text');
+                    const btnLoading = submitBtn.querySelector('.btn-loading');
+                    const statusEl = document.getElementById('newsletter-status');
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'inline-block';
+                    statusEl.style.display = 'none';
+                    
+                    // Prepare form data
+                    const formData = new FormData(form);
+                    const formObject = { formType: 'Newsletter Subscription' };
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+                    
+                    try {
+                        // Submit to n8n webhook
+                        const response = await fetch('https://framewebsitesubmissions.app.n8n.cloud/webhook/frame-form', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formObject),
+                        });
+                        
+                        if (response.ok) {
+                            // Show success message
+                            statusEl.textContent = 'Thank you for subscribing to our newsletter!';
+                            statusEl.style.backgroundColor = 'rgba(46, 204, 113, 0.1)';
+                            statusEl.style.color = '#27ae60';
+                            statusEl.style.display = 'block';
+                            form.reset();
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        statusEl.textContent = 'There was an error submitting your subscription. Please try again later.';
+                        statusEl.style.backgroundColor = 'rgba(231, 76, 60, 0.1)';
+                        statusEl.style.color = '#e74c3c';
+                        statusEl.style.display = 'block';
+                    } finally {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        btnText.style.display = 'inline-block';
+                        btnLoading.style.display = 'none';
+                    }
+                });
+                </script>
             </div>
             
             <div class="footer-bottom">
