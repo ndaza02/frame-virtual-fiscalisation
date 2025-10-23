@@ -352,19 +352,107 @@ header .container {
 }
 
 .hexagon:nth-child(3) {
-    background-color: #00a8e8;
+background-color: #00a8e8;
+}
+
+.pricing-card .price {
+font-size: 2.5rem;
+font-weight: 700;
+margin: 20px 0;
+color: var(--primary-color);
+}
+
+/* Product Card Top Row */
+.product-card .card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+    gap: 20px;
+}
+
+/* Product Card Pricing Styles */
+.product-card .pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* Price styling for all product cards */
+.product-card .price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff !important; /* Bright blue for all prices */
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 0 0 8px rgba(0, 150, 255, 0.4); /* Glow effect */
+}
+
+/* Ensure consistent styling for all prices */
+.product-card .price,
+.most-popular .price,
+.new-item .price,
+.accent-blue1 + .pricing .price,
+.accent-blue3 + .pricing .price {
+    color: #007bff !important;
+    text-shadow: 0 0 8px rgba(0, 150, 255, 0.4) !important;
+}
+
+.product-card .billing {
+    display: block;
+    font-size: 0.8rem;
+    color: #007bff !important; /* Matching the bright blue price color */
+    margin-top: 4px;
+    font-weight: 500;
+    text-align: right;
+    text-shadow: 0 0 5px rgba(0, 150, 255, 0.3); /* Subtle glow to match the price */
+}
+
+/* Remove overrides since we want all billing text to be the same bright blue */
+
+.product-card .price {
+display: block;
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--frame-blue1);
+line-height: 1.2;
+white-space: nowrap;
+}
+
+.product-card .billing {
+display: block;
+font-size: 0.8rem;
+color: var(--dark-gray);
+margin-top: 2px;
+font-weight: 500;
+}
+
+.most-popular .price {
+color: var(--frame-blue2);
+}
+
+.most-popular .billing {
+color: var(--frame-blue3);
 }
 
 .logo-text h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    line-height: 1;
-    color: var(--primary-color);
+font-size: 1.8rem;
+margin: 0;
+line-height: 1;
+color: var(--primary-color);
 }
 
 .logo-text p {
-    font-size: 0.7rem;
-    margin: 0;
+font-size: 0.7rem;
+margin: 0;
+font-weight: 600;
+letter-spacing: 1px;
+color: var(--dark-gray);
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--dark-gray);

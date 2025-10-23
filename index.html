@@ -496,17 +496,21 @@
                         transition: all 0.3s ease;
                     }
 
-                    .product-card:nth-child(1) .card-accent::before {
+                    /* Icon assignments by card type */
+                    .product-card.most-popular .card-accent::before {
+                        /* Desktop icon */
                         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='3' width='20' height='14' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='8' y1='21' x2='16' y2='21'%3E%3C/line%3E%3Cline x1='12' y1='17' x2='12' y2='21'%3E%3C/line%3E%3C/svg%3E");
                     }
 
-                    .product-card:nth-child(2) .card-accent::before {
+                    .product-card.new-item .card-accent::before {
+                        /* Mobile phone icon */
                         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='2' width='14' height='20' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='12' y1='18' x2='12.01' y2='18'%3E%3C/line%3E%3C/svg%3E");
                         width: 28px;
                         height: 28px;
                     }
 
-                    .product-card:nth-child(3) .card-accent::before {
+                    .product-card:not(.most-popular):not(.new-item) .card-accent::before {
+                        /* Library/box icon */
                         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'%3E%3C/path%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'%3E%3C/polyline%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'%3E%3C/line%3E%3C/svg%3E");
                     }
 
@@ -538,21 +542,16 @@
                 </style>
 
                 <div class="product-cards-container">
-                    <!-- Product Card 1 -->
-                    <div class="product-card most-popular">
-                        <div class="popular-badge">Most Popular</div>
-                        <div class="card-accent accent-blue1"></div>
-                        <h3 class="card-title">FRAME Desktop Version</h3>
-                        <p class="card-description">
-                            Simplify Invoicing. Automate Compliance. All From Your Computer
-                        </p>
-                        <a href="https://forms.clickup.com/7278763/f/6y45b-42172/E7ZG8VFWXL2BJ63OUP" target="_blank" rel="noopener noreferrer" class="card-button">Get Started Here</a>
-                    </div>
-
-                    <!-- Product Card 3 - Mobile App (Moved to middle) -->
+                    <!-- Product Card 1 - Mobile App (Moved to first) -->
                     <div class="product-card new-item">
+                        <div class="card-top-row">
+                            <div class="card-accent accent-blue1"></div>
+                            <div class="pricing">
+                                <span class="price">$69.99</span>
+                                <span class="billing">billed annually</span>
+                            </div>
+                        </div>
                         <div class="new-badge">New</div>
-                        <div class="card-accent accent-blue3"></div>
                         <h3 class="card-title">FRAME Mobile App</h3>
                         <p class="card-description">
                             Are you a startup?<br>
@@ -563,12 +562,34 @@
                         <a href="https://forms.clickup.com/7278763/f/6y45b-43772/AQB9UM50RL7TVCOELL" target="_blank" rel="noopener noreferrer" class="card-button">Get Started Here</a>
                     </div>
 
+                    <!-- Product Card 2 - Desktop Version -->
+                    <div class="product-card most-popular">
+                        <div class="card-top-row">
+                            <div class="card-accent accent-blue3"></div>
+                            <div class="pricing">
+                                <span class="price">$99.99</span>
+                                <span class="billing">billed annually</span>
+                            </div>
+                        </div>
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="card-title">FRAME Desktop Version</h3>
+                        <p class="card-description">
+                            Simplify Invoicing. Automate Compliance. All From Your Computer
+                        </p>
+                        <a href="https://forms.clickup.com/7278763/f/6y45b-42172/E7ZG8VFWXL2BJ63OUP" target="_blank" rel="noopener noreferrer" class="card-button">Get Started Here</a>
+                    </div>
+
                     <!-- Product Card 2 - Library (Moved to last) -->
                     <div class="product-card">
-                        <div class="card-accent accent-blue2"></div>
+                        <div class="card-top-row">
+                            <div class="card-accent accent-blue2"></div>
+                            <div class="pricing">
+                                <span class="price">Price TBA</span>
+                            </div>
+                        </div>
                         <h3 class="card-title">FRAME Library</h3>
                         <p class="card-description">
-                            Seamless Compliance, Scalable Control – A Fiscalisation Library Built for Corporates.
+                            This is a custom made solution for 50+ devices. Includes device monitoring dashboard.
                         </p>
                         <a href="https://forms.clickup.com/7278763/f/6y45b-43752/C2DL93YFNX5HVUVSUF" target="_blank" rel="noopener noreferrer" class="card-button">Get Started Here</a>
                     </div>
@@ -721,11 +742,7 @@
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>30-Day Free Trial – Try FRAME risk-free and see how it fits your business</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Affordable Pricing – One-time $150 installation + $120/year. No hidden fees.</span>
+                        <span>Affordable Pricing – One-time installation fee of $50.</span>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle"></i>
