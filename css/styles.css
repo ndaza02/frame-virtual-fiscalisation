@@ -413,32 +413,7 @@ color: var(--primary-color);
     text-shadow: 0 0 5px rgba(0, 150, 255, 0.3); /* Subtle glow to match the price */
 }
 
-/* Remove overrides since we want all billing text to be the same bright blue */
-
-.product-card .price {
-display: block;
-font-size: 1.8rem;
-font-weight: 700;
-color: var(--frame-blue1);
-line-height: 1.2;
-white-space: nowrap;
-}
-
-.product-card .billing {
-display: block;
-font-size: 0.8rem;
-color: var(--dark-gray);
-margin-top: 2px;
-font-weight: 500;
-}
-
-.most-popular .price {
-color: var(--frame-blue2);
-}
-
-.most-popular .billing {
-color: var(--frame-blue3);
-}
+/* Removed duplicate/conflicting rules - using consistent bright blue styling above */
 
 .logo-text h1 {
 font-size: 1.8rem;
