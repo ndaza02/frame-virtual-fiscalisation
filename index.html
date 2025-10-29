@@ -195,16 +195,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero reveal" style="padding: 0; position: relative; overflow: hidden; background: linear-gradient(135deg, #1a2a3a 0%, #2c5b8a 100%);">
-        <!-- Animated Banner -->
-        <div class="banner-container" style="width: 100%; position: relative; overflow: hidden; margin-top: 80px;">
-            <a href="https://forms.clickup.com/7278763/f/6y45b-46372/T8EKNXGCZSCE8RIPHB" target="_blank" rel="noopener noreferrer" style="display: block;">
-                <img src="images/Frame Give Away Banner.jpg" alt="FRAME Give Away" class="banner-image" style="width: 100%; height: auto; display: block; opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);">
-            </a>
-            <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%); pointer-events: none;"></div>
-        </div>
+
         
         <!-- Product Cards Section -->
-        <div class="product-cards-wrapper" style="position: relative; overflow: hidden; padding: 60px 0 100px;">
+        <div class="product-cards-wrapper" style="position: relative; overflow: hidden; padding: 100px 0 100px;">
             <!-- Animated Background Elements -->
             <div class="hero-bg-elements">
                 <div class="bg-circle" style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 70%); top: -100px; right: -100px; border-radius: 50%;"></div>
@@ -240,10 +234,8 @@
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
+                        align-content: center;
                         gap: 30px;
-                        width: 100%;
-                        align-items: stretch;
-                        perspective: 1000px;
                     }
                     
                     .product-card {
@@ -524,7 +516,9 @@
                         .product-cards-container {
                             gap: 25px;
                             padding: 0 15px;
+                            align-content: center;
                         }
+                        .product-cards-wrapper { min-height: auto; }
                     }
 
                     /* Subtle floating animation for cards */
@@ -1201,5 +1195,11 @@
         });
     </script>
     <script src="js/feature-typer.js"></script>
+
+    <!-- Floating WhatsApp Chat -->
+    <a href="https://wa.me/263783940835?text=Hello%20FRAME%2C%20I%27d%20like%20to%20chat%20about%20virtual%20fiscalisation.%20Can%20you%20assist%3F" class="whatsapp-fab" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-fab-label">Chat with us</div>
 </body>
 </html>
